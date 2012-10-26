@@ -6,3 +6,11 @@ RSpec.configure do |c|
   c.module_path = File.join(fixture_path, 'modules')
   c.manifest_dir = File.join(fixture_path, 'manifests')
 end
+
+shared_context 'debian system' do
+  let(:facts) do
+    {
+      :osfamily => 'debian'
+    }
+  end
+end
